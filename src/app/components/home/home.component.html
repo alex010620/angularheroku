@@ -1,0 +1,446 @@
+<style>
+  .gradient {
+    width: 100%;
+    height: 350px;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg,
+        rgb(0, 123, 255) 0%,
+        rgba(0, 212, 255, 1) 100%);
+    -webkit-box-shadow: 6px 46px 35px -46px rgba(0, 123, 255, 1);
+    -moz-box-shadow: 6px 46px 35px -46px rgba(0, 123, 255, 1);
+    box-shadow: 6px 46px 35px -46px rgba(0, 123, 255, 1);
+    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+  }
+
+  * {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .cemter {
+    width: 45%;
+    margin: 0 auto;
+  }
+
+  .centerbtn {
+    width: 50%;
+    width: 0 auto;
+  }
+
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 99;
+  }
+
+  label {
+    color: #007bff;
+  }
+
+  .alert-info {
+    display: none;
+  }
+
+  #alertaNosecreto {
+    display: none;
+  }
+
+  #esp {
+    margin-right: 10px;
+  }
+
+  .mostrarOcurtar {
+    border: 2px solid gray;
+    border-radius: 5px;
+    display: none;
+  }
+
+  footer {
+    background: #007bff;
+    height: 250px;
+  }
+
+  .modal {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .modal2 {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    transition: all 500ms ease;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .modal2 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    transition: all 500ms ease;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  #btn-modal:checked~.modal {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  #btn-modal2:checked~.modal2 {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .contenedor {
+    width: 400px;
+    height: 300px;
+    margin: auto;
+    background: #fff;
+    box-shadow: 1px 7px 25px rgba(0, 0, 0, 0.6);
+    transition: all 500ms ease;
+    position: relative;
+    transform: translateY(-30%);
+  }
+
+  .contenedor2 {
+    width: 400px;
+    height: 300px;
+    margin: auto;
+    background: #fff;
+    box-shadow: 1px 7px 25px rgba(0, 0, 0, 0.6);
+    transition: all 500ms ease;
+    position: relative;
+    transform: translateY(-30%);
+  }
+
+  #btn-modal:checked~.modal .contenedor {
+    transform: translateY(0%);
+  }
+
+  #btn-modal2:checked~.modal2 .contenedor2 {
+    transform: translateY(0%);
+  }
+
+  .contenedor header {
+    padding: 10px;
+    background: #007bff;
+    color: #fff;
+  }
+
+  .contenedor label {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+  }
+
+  .contenedor2 header {
+    padding: 10px;
+    background: #007bff;
+    color: #fff;
+  }
+
+  .contenedor2 label {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+  }
+
+  #btn-modal {
+    display: none;
+  }
+
+  .lbl-modal {
+    background: #fff;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  #btn-modal2 {
+    display: none;
+  }
+
+  .lbl-modal2 {
+    background: #fff;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  @media only screen and (min-width: 320px) and (max-width: 768px) {
+    .contenedor {
+      width: 95%;
+    }
+  }
+
+  @media only screen and (min-width: 320px) and (max-width: 768px) {
+    .contenedor2 {
+      width: 95%;
+    }
+  }
+
+  .por {
+    width: 100%;
+    height: 30px;
+  }
+
+  .por2 {
+    width: 100%;
+    height: 30px;
+  }
+</style>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+  <a class="navbar-brand" style="
+      color: white;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    " href="#">
+    <img src="../../../assets/empathy.png" alt="" width="30" height="30" />
+    Secrets</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto"></ul>
+
+    <form class="form-inline my-2 my-lg-0">
+      <a class="navbar-brand" style="
+          color: white;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        " href="#">
+        <img src="../../../assets/group.png" alt="" width="30" height="30" />
+        {{ contad }}</a>
+      <li style="list-style: none; margin-right: 40px" class="nav-item dropdown my-2 my-lg-0">
+        <a style="color: white" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+          aria-haspopup="true" aria-expanded="false">Configuracion</a>
+        <div class="dropdown-menu">
+          <a style="cursor: pointer" class="dropdown-item"><label for="btn-modal" class="lbl-modal">Cambiar
+              Credenciales</label></a>
+          <a style="cursor: pointer" class="dropdown-item"><label for="btn-modal2" class="lbl-modal2">Cambiar
+              Contraseña</label></a>
+        </div>
+      </li>
+
+      <button class="btn btn-primary my-2 my-sm-0" (click)="confSalir()" type="submit">
+        Salir
+      </button>
+    </form>
+  </div>
+</nav>
+<div class="gradient">
+  <br />
+  <br />
+  <div class="center">
+    <div class="text-center mb-4">
+      <img style="z-index: 9999999" class="mb-4" src="../../../assets/empathy.png" alt="" width="150" height="150" />
+      <h1 style="
+          color: white;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+          font-size: 70px;
+          z-index: 9999999;
+        " class="h3 mb-3 font-weight-normal">
+        Secrets
+      </h1>
+    </div>
+  </div>
+</div>
+
+<div style="margin-top: 25px" class="cemter">
+  <div class="botones">
+    <label id="esp" style="font-size: 20px" for=""><b>Mi mayor secreto</b></label>
+    <button id="esp" type="button" (click)="mostrar()" class="btn btn-success">
+      Mostrar
+    </button>
+    <button id="esp" type="button" (click)="ocurtar()" class="btn btn-danger">
+      Ocultar
+    </button>
+  </div>
+  <br />
+  <div id="alertaNosecreto" class="alert alert-danger" role="alert">
+    Hola, no tienes ningun secreto... Registra uno. Si ya registraste un secreto
+    y no te aparese sal y entra al sitio nuevamente.
+    <img style="float: right; cursor: pointer" src="../../../assets/remove.png" (click)="ocurtar()" width="30"
+      height="30" alt="" />
+  </div>
+  <div id="alerta" class="alert alert-info" role="alert">
+    {{ respa }}
+    <img style="float: right; cursor: pointer" src="../../../assets/remove.png" (click)="ocurtar()" width="30"
+      height="30" alt="" />
+  </div>
+  <div id="mostrarOcurtar" class="mostrarOcurtar">
+    <form>
+      <div class="form-group">
+        <label style="margin-left: 10px; margin-top: 5px" for="inputAddress"><b>Titulo</b></label>
+        <button style="float: right; margin-right: 10px; margin-top: 10px" id="esp" type="button" (click)="ocurtarDiv()"
+          class="btn btn-danger">
+          Eliminar el secreto
+        </button>
+        <p style="margin-left: 10px">{{ center.Titulo }}</p>
+      </div>
+
+      <div class="form-group">
+        <label style="margin-left: 10px" for="inputAddress"><b>Descripcion</b></label>
+        <p style="margin-left: 10px">{{ center.Descripcion }}</p>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label style="margin-left: 10px" for="inputEmail4"><b>Valor monetario</b></label>
+          <p style="margin-left: 10px">{{ center.ValorMonetario }}</p>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputPassword4"><b>Fecha del suceso</b></label>
+          <p>{{ center.Fecha }}</p>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label style="margin-left: 10px" for="inputEmail4"><b>Lugar donde sucedio</b></label>
+          <p style="margin-left: 10px">{{ center.Lugar }}</p>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputPassword4"><b>Longitud y Latitud</b></label>
+          <p>{{ center.LongitudYLatitud }}</p>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <h1>Registrar un Secreto</h1>
+  <form>
+    <div class="form-group">
+      <label for="inputAddress"><b>Titulo</b></label>
+      <input type="text" class="form-control" [(ngModel)]="titulo" name="titulo" id="inputAddress" placeholder="" />
+    </div>
+
+    <div class="form-group">
+      <label for="inputAddress"><b>Descripcion</b></label>
+      <textarea style="height: 150px" class="form-control" [(ngModel)]="despcripcion" name="despcripcion"
+        id="inputAddres" cols="30" rows="10"></textarea>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputEmail4"><b>Valor monetario</b></label>
+        <input type="text" [(ngModel)]="valor" name="valor" class="form-control" id="inputEmail4" />
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputPassword4"><b>Fecha del suceso</b></label>
+        <input type="text" class="form-control" [(ngModel)]="fecha" name="fecha" id="inputPassword4" />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputEmail4"><b>Lugar donde sucedio</b></label>
+        <input type="text" class="form-control" [(ngModel)]="lugar" name="lugar" id="inputEmail" />
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputPassword4"><b>Longitud y Latitud</b></label>
+        <input type="text" class="form-control" [(ngModel)]="long" name="long" id="inputPassword" />
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="form-check"></div>
+    </div>
+    <div style="width: 27%; margin: auto" class="centerbtn">
+      <button style="width: 200px" type="submit" (click)="guardar()" class="btn btn-primary">
+        Guardar
+      </button>
+    </div>
+  </form>
+</div>
+<br />
+<br />
+<!--Ventanas -->
+<input type="checkbox" id="btn-modal" />
+<div class="modal">
+  <div class="contenedor">
+    <header>¡{{ resp }}!</header>
+    <label for="btn-modal">X</label>
+    <div class="contenido">
+      <div style="width: 70%; margin: 0 auto" class="df">
+        <form>
+          <br />
+          <span><b>Nuevo nombre de usuario</b></span>
+          <br />
+          <input class="por" type="text" [(ngModel)]="NNombre" name="NNombre" />
+          <br />
+          <br />
+          <span><b>Nuevo Correo</b></span>
+          <br />
+          <input class="por" type="text" [(ngModel)]="Ncorreo" name="Ncorreo" />
+          <br />
+          <br />
+          <div style="width: 27%; margin: auto" class="centerbtn">
+            <button type="submit" (click)="modificarCredenciales()" class="btn btn-primary">
+              Guardar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<input type="checkbox" id="btn-modal2" />
+<div class="modal2">
+  <div class="contenedor2">
+    <header>{{ resp }}</header>
+    <label for="btn-modal2">X</label>
+    <div class="contenido2">
+      <div style="width: 70%; margin: 0 auto" class="df">
+        <form>
+          <br />
+          <span><b>Contraseña Actual</b></span>
+          <br />
+          <input class="por2" type="text" [(ngModel)]="OlPass" name="OlPass" />
+          <br />
+          <br />
+          <span><b>Nueva Contraseña</b></span>
+          <br />
+          <input class="por2" type="text" [(ngModel)]="NPass" name="NPass" />
+          <br />
+          <br />
+          <div style="width: 27%; margin: auto" class="centerbtn">
+            <button type="submit" (click)="modificarPass()" class="btn btn-primary">
+              Guardar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  }
+  <br />
+  <img style="margin-left: 20px" src="../../../assets/facebook.png" width="40" height="40" alt="" />
+  <label style="color: white; margin-left: 10px" for=""><b>Alex Carreras</b></label><br /><br />
+  <img style="margin-left: 20px" src="../../../assets/instagram.png" width="40" height="40" alt="" />
+  <label style="color: white; margin-left: 10px" for=""><b>Alex_ca</b></label><br /><br />
+  <img style="margin-left: 20px" src="../../../assets/twitter.png" width="40" height="40" alt="" />
+  <label style="color: white; margin-left: 10px" for=""><b>@AlexCarreras</b></label>
+  <p style="color: white" class="text-center"><b>&copy; YAMC-2020</b></p>
+</footer>

@@ -1,0 +1,50 @@
+<style>
+  .bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+  .center{
+    width: 20%;
+    margin: 0 auto;
+    margin-top: 5%;
+
+  }
+</style>
+
+<div class="center">
+<form class="form-signin">
+<div class="text-center mb-4">
+<img class="mb-4" src="../../../assets/empathy.png" alt="" width="72" height="72">
+<h1 class="h3 mb-3 font-weight-normal">Registro</h1>
+</div>
+
+<div class="form-group">
+  <label for="formGroupExampleInput2">Nombre</label>
+  <input type="text" class="form-control" [(ngModel)]="nombre" name="nombre" id="formGroupExampleInput2" placeholder="Escribe tu nombre...">
+</div>
+<div class="form-group">
+  <label for="formGroupExampleInput2">Correo</label>
+  <input type="text" class="form-control" [(ngModel)]="correo" name="correo" id="formGroupExampleInput2" placeholder="Escribe tu correo...">
+</div>
+<div class="form-group">
+  <label for="formGroupExampleInput2">Contraseña</label>
+  <input type="text" class="form-control" [(ngModel)]="clave" name="clave" id="formGroupExampleInput2" placeholder="Escribe tu contraseña...">
+</div>
+<br>
+<button class="btn btn-lg btn-primary btn-block" (click)="datos()"  type="submit">Registrarme</button>
+<br>
+<label for="">Ya tengo una cuenta <a style="color: #009cda; cursor: pointer;" (click) = "iniciar()">Iniciar Sesion!</a></label>
+
+<p class="mt-5 mb-3 text-muted text-center">&copy; YAMC-2020</p>
+</form>
+</div>

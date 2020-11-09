@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { LoginComponent } from './components/login/login.component';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'api7tarea';
+
+  constructor() {
+
+   }
+
+  ngOnInit(): void {
+  }
+
 }

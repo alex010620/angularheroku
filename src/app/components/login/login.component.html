@@ -1,0 +1,79 @@
+<style>
+  .bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+      font-size: 3.5rem;
+    }
+  }
+
+  .center {
+    width: 20%;
+    margin: 0 auto;
+    margin-top: 5%;
+
+  }
+
+  .OlvidemiPass {
+    display: none;
+  }
+
+</style>
+
+
+
+<div class="center">
+  <form class="form-signin">
+    <div class="text-center mb-4">
+      <img class="mb-4" src="../../../assets/empathy.png" alt="" width="72" height="72">
+      <h1 class="h3 mb-3 font-weight-normal">Secrets</h1>
+    </div>
+    <div id="OlvidemiPass" class="OlvidemiPass">
+      <div class="form-label-group">
+        <img style="cursor: pointer;" (click)="OcultarRecordar()" class="mb-4" src="../../../assets/previous.png" alt=""
+          width="30" height="30">
+        <label class="mb-3" for="formGroupExampleInput2">Escribe tu correo para buscar tu contraseña</label>
+        <br>
+        <input type="email" id="inputEmail" [(ngModel)]="reestal" name="reestal" class=" form-control"
+          placeholder="Escribe el correo electronico" required autofocus>
+        <br>
+        <label id="e" style="display: none;" for="">{{hg}}</label>
+        <br>
+        <button class="btn btn-lg  btn-primary btn-block" (click)="buscar()" type="button">Buscar</button>
+      </div>
+      <input type="file" name="hefsdhd" id="">
+    </div>
+    <div id="login" class="login">
+      <div class="form-label-group">
+        <label for="formGroupExampleInput2">Usuario</label>
+        <input type="email" id="inputEmai" [(ngModel)]="user" name="user" class="form-control"
+          placeholder="Usuario o correo electronico" required autofocus>
+      </div>
+      <br>
+      <div class="form-label-group">
+        <label for="formGroupExampleInput2">Contraseña</label>
+        <input type="password" id="inputPassword" [(ngModel)]="pass" name="pass" class="form-control"
+          placeholder="Contraseña" required>
+
+      </div>
+      <br>
+      <button class="btn btn-lg btn-primary btn-block" (click)="datos()" type="submit">Iniciar sesion</button>
+      <br>
+      <div class="checkbox mb-3">
+        <label>
+          <label for="">No tengo una cuenta <a style="color: #009cda; cursor: pointer;" (click)="irRegistro()">Crear
+              una!</a></label>
+          <label (click)="ocultarLogin()" style="color: #009cda; cursor: pointer;">Olvidaste tu Contraseña?</label>
+        </label>
+      </div>
+    </div>
+  </form>
+</div>
+<p class="mt-3 mb-3 text-muted text-center">&copy; YAMC-2020</p>
