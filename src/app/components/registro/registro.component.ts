@@ -22,7 +22,7 @@ export class RegistroComponent implements OnInit {
      if (this.nombre == ""|| this.clave =="" || this.correo =="") {
        alert("Hay algun campo vacio...")
      } else {
-      this.http.get("/api/registrar/"+this.nombre+"/"+this.correo+"/"+this.clave+"")
+      this.http.get("https://yanm.herokuapp.com/api/registrar/"+this.nombre+"/"+this.correo+"/"+this.clave+"")
       .subscribe(data=> {
         this.conver = data;
         alert(this.conver.Registro);

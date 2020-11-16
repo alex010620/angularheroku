@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
     if (this.user =="" || this.pass=="") {
       alert("Los campos de logueo no pueden estar vacios")
     } else {
-      this.http.get("/api/iniciar/"+this.user+"/"+this.pass+"")
+      this.http.get("https://yanm.herokuapp.com/api/iniciar/"+this.user+"/"+this.pass+"")
     .subscribe(data=> {
         this.convercion = data;
           if (this.convercion == "Las credenciales son incorrectas") {
@@ -75,7 +75,7 @@ emi(){
     if (this.reestal=="") {
       alert("el campo de busqueda esta vacio")
     } else {
-      this.http.get("/api/NotRemmenver/"+this.reestal+"")
+      this.http.get("https://yanm.herokuapp.com/api/NotRemmenver/"+this.reestal+"")
     .subscribe(data=> {
         this.convercio = data;
         this.hg = this.convercio.pass
